@@ -17,6 +17,7 @@ import DarkModeQueryParamReader from '../theme/DarkModeQueryParamReader'
 import AddLiquidity from './AddLiquidity'
 import { RedirectDuplicateTokenIds } from './AddLiquidity/redirects'
 import { RedirectDuplicateTokenIdsV2 } from './AddLiquidityV2/redirects'
+import Bond from './Bond'
 import Earn from './Earn'
 import Manage from './Earn/Manage'
 import MigrateV2 from './MigrateV2'
@@ -95,6 +96,8 @@ export default function App() {
                 <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
                 <Route exact strict path="/uni" component={Earn} />
                 <Route exact strict path="/uni/:currencyIdA/:currencyIdB" component={Manage} />
+
+                <Route exact strict path="/bond" component={Bond} />
 
                 <Route exact strict path="/send" component={RedirectPathToSwapOnly} />
                 <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />

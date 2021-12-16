@@ -23,7 +23,7 @@ import Modal from '../Modal'
 import Row from '../Row'
 import { Dots } from '../swap/styleds'
 import Web3Status from '../Web3Status'
-import NetworkSelector from './NetworkSelector'
+// import NetworkSelector from './NetworkSelector'
 import UniBalanceContent from './UniBalanceContent'
 
 const HeaderFrame = styled.div<{ showBackground: boolean }>`
@@ -277,6 +277,12 @@ export default function Header() {
         <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
           <Trans>Swap</Trans>
         </StyledNavLink>
+        <StyledNavLink id={`swap-nav-link`} to={'/bond'}>
+          <Trans>Bond</Trans>
+        </StyledNavLink>
+        <StyledNavLink id={`swap-nav-link`} to={'/stake'}>
+          <Trans>Stake</Trans>
+        </StyledNavLink>
         <StyledNavLink
           id={`pool-nav-link`}
           to={'/pool'}
@@ -302,9 +308,6 @@ export default function Header() {
       </HeaderLinks>
 
       <HeaderControls>
-        <HeaderElement>
-          <NetworkSelector />
-        </HeaderElement>
         <HeaderElement>
           {availableClaim && !showClaimPopup && (
             <UNIWrapper onClick={toggleClaimModal}>
